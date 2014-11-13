@@ -70,8 +70,9 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ScanViewController *scanCardViewController = [[ScanViewController alloc] init];
-    [self.navigationController pushViewController:scanCardViewController animated:YES];
+    ScanViewController *scanViewController = [[ScanViewController alloc] init];
+    scanViewController.scanViewDelegate = self;
+    [self.navigationController pushViewController:scanViewController animated:YES];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

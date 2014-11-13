@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @protocol ScanViewDelegate <NSObject>
 
@@ -14,7 +15,7 @@
 
 @end
 
-@interface ScanViewController : UIViewController
+@interface ScanViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
 
 @property (nonatomic, weak) id <ScanViewDelegate> scanViewDelegate;
 

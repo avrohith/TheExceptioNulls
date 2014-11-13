@@ -21,8 +21,6 @@
 		AE91E2201A0ED71000DFD02C /* wOfferWookieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E21F1A0ED71000DFD02C /* wOfferWookieTests.m */; };
 		AE91E22C1A0ED76000DFD02C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E22A1A0ED76000DFD02C /* HomeViewController.m */; };
 		AE91E2311A0EDA7200DFD02C /* RetailerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E22F1A0EDA7200DFD02C /* RetailerListViewController.m */; };
-		AE91E2361A0EDF4200DFD02C /* ScanCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E2341A0EDF4200DFD02C /* ScanCardViewController.m */; };
-		AE91E2371A0EDF4200DFD02C /* ScanCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE91E2351A0EDF4200DFD02C /* ScanCardViewController.xib */; };
 		AE91E23C1A0F30A700DFD02C /* RetailerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E23A1A0F30A700DFD02C /* RetailerDetailViewController.m */; };
 		AE91E2491A0FBA2A00DFD02C /* OffersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E2471A0FBA2A00DFD02C /* OffersViewController.m */; };
 		AE91E2531A0FC66600DFD02C /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E2511A0FC66600DFD02C /* CardViewController.m */; };
@@ -73,9 +71,6 @@
 		AE91E22A1A0ED76000DFD02C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		AE91E22E1A0EDA7200DFD02C /* RetailerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetailerListViewController.h; sourceTree = "<group>"; };
 		AE91E22F1A0EDA7200DFD02C /* RetailerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetailerListViewController.m; sourceTree = "<group>"; };
-		AE91E2331A0EDF4200DFD02C /* ScanCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCardViewController.h; sourceTree = "<group>"; };
-		AE91E2341A0EDF4200DFD02C /* ScanCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardViewController.m; sourceTree = "<group>"; };
-		AE91E2351A0EDF4200DFD02C /* ScanCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanCardViewController.xib; sourceTree = "<group>"; };
 		AE91E2391A0F30A700DFD02C /* RetailerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetailerDetailViewController.h; sourceTree = "<group>"; };
 		AE91E23A1A0F30A700DFD02C /* RetailerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetailerDetailViewController.m; sourceTree = "<group>"; };
 		AE91E2461A0FBA2A00DFD02C /* OffersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersViewController.h; sourceTree = "<group>"; };
@@ -188,9 +183,6 @@
 				AE91E22A1A0ED76000DFD02C /* HomeViewController.m */,
 				AE91E22E1A0EDA7200DFD02C /* RetailerListViewController.h */,
 				AE91E22F1A0EDA7200DFD02C /* RetailerListViewController.m */,
-				AE91E2331A0EDF4200DFD02C /* ScanCardViewController.h */,
-				AE91E2341A0EDF4200DFD02C /* ScanCardViewController.m */,
-				AE91E2351A0EDF4200DFD02C /* ScanCardViewController.xib */,
 				AE91E2391A0F30A700DFD02C /* RetailerDetailViewController.h */,
 				AE91E23A1A0F30A700DFD02C /* RetailerDetailViewController.m */,
 				AE91E2461A0FBA2A00DFD02C /* OffersViewController.h */,
@@ -310,7 +302,6 @@
 				AE91E25E1A0FE4B000DFD02C /* RetailerListCell.xib in Resources */,
 				AEE3FC5D1A1082DB00A6C2A4 /* beep.mp3 in Resources */,
 				AE91E2141A0ED71000DFD02C /* LaunchScreen.xib in Resources */,
-				AE91E2371A0EDF4200DFD02C /* ScanCardViewController.xib in Resources */,
 				AE91E2111A0ED71000DFD02C /* Images.xcassets in Resources */,
 				AE91E2541A0FC66600DFD02C /* CardViewController.xib in Resources */,
 				AE31423D1A1313EB00AE3512 /* OfferCollectionCell.xib in Resources */,
@@ -336,7 +327,6 @@
 				AE91E2091A0ED71000DFD02C /* AppDelegate.m in Sources */,
 				AE91E2061A0ED71000DFD02C /* main.m in Sources */,
 				AE31423C1A1313EB00AE3512 /* OfferCollectionCell.m in Sources */,
-				AE91E2361A0EDF4200DFD02C /* ScanCardViewController.m in Sources */,
 				AE3142431A13276B00AE3512 /* CardImageTransformer.m in Sources */,
 				AE91E23C1A0F30A700DFD02C /* RetailerDetailViewController.m in Sources */,
 				AE3142401A13269B00AE3512 /* UserData.xcdatamodeld in Sources */,
