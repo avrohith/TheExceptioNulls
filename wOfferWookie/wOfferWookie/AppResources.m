@@ -262,7 +262,7 @@
     return nil;
 }
 
--(UIColor *) getColorFromOpco:(NSString *) opcoValue
+-(UIColor *) getRetailerColorFromOpco:(NSString *) opcoValue
 {
     if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:0]]) {
         return [UIColor colorWithRed:237.0/255.0 green:27.0/255.0 blue:36.0/255.0 alpha:1];

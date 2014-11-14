@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface AppResources : NSObject
 
@@ -20,5 +21,6 @@
 -(NSArray *) getCards;
 -(NSString *) getRetailerImageNameForOpco: (NSString *) opcoValue;
 -(NSString *) getRetailerNameForOpco: (NSString *) opcoValue;
+-(UIColor *) getRetailerColorFromOpco:(NSString *) opcoValue;
 
 @end

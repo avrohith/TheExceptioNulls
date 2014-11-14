@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardItem.h"
 
 @interface CardViewController : UIViewController
+
+@property (nonatomic) CardItem *cardItem;
 
 @end

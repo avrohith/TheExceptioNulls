@@ -53,7 +53,11 @@
     UINib *uiNib = [UINib nibWithNibName:@"RetailerCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:uiNib forCellWithReuseIdentifier:self.cellReuseIdentifier];
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
-    // Do any additional setup after loading the view from its nib.
+
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -107,9 +111,8 @@
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    RetailerDetailViewController *retailerDetailViewController = [[RetailerDetailViewController alloc] init];
     CardItem *cardItem = [self.cardsArray objectAtIndex:indexPath.row];
-    retailerDetailViewController.cardItem = cardItem;
+    RetailerDetailViewController *retailerDetailViewController = [[RetailerDetailViewController alloc] initWithCardItem:cardItem];
     [self.navigationController pushViewController:retailerDetailViewController animated:YES];
 }
 

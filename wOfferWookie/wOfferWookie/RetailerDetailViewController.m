@@ -16,18 +16,25 @@
 
 @implementation RetailerDetailViewController
 
--(instancetype) init
+-(instancetype) initWithCardItem:(CardItem *)cardItem
 {
     self = [super init];
     if (self) {
         
+        self.cardItem = cardItem;
         CardViewController *cardViewController = [[CardViewController alloc] init];
+        cardViewController.cardItem = self.cardItem;
         OffersViewController *offersViewController = [[OffersViewController alloc] init];
         
         self.viewControllers = @[cardViewController, offersViewController];
     }
     
     return self;
+}
+
+-(instancetype) init
+{
+    @throw [[NSException alloc] initWithName:@"call initWithCardItem:(CardItem *) cardItem" reason:@"" userInfo:nil];
 }
 
 - (void)viewDidLoad {

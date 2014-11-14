@@ -7,6 +7,7 @@
 //
 
 #import "CardViewController.h"
+#import "AppResources.h"
 
 @interface CardViewController ()
 @property (weak, nonatomic) IBOutlet UIView *retailerHeaderUIView;
@@ -37,7 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.retailerHeaderUIView setBackgroundColor:[[AppResources appResources] getRetailerColorFromOpco:self.cardItem.opco]];
+    self.retailerHeaderLogo.image = [UIImage imageNamed:[[AppResources appResources] getRetailerImageNameForOpco:self.cardItem.opco]];
 }
 
 - (void)didReceiveMemoryWarning {

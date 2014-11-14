@@ -13,4 +13,6 @@
 
 @property (nonatomic) CardItem *cardItem;
 
+-(instancetype) initWithCardItem: (CardItem *) cardItem;
+
 @end
