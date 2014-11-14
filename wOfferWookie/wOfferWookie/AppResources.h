@@ -12,10 +12,13 @@
 
 +(instancetype) appResources;
 
--(NSArray *) retailerNamesArray;
--(NSArray *) retailerImagesArray;
--(NSArray *) retailerOpcosArray;
+-(NSArray *) getRetailerNamesArray;
+-(NSArray *) getRetailerImagesArray;
+-(NSArray *) getRetailerOpcosArray;
 -(BOOL) saveChanges;
 -(void) addCardWithOpco:(NSString *) opco AndCardValue:(NSString *) cardValue;
+-(NSArray *) getCards;
+-(NSString *) getRetailerImageNameForOpco: (NSString *) opcoValue;
+-(NSString *) getRetailerNameForOpco: (NSString *) opcoValue;
 
 @end

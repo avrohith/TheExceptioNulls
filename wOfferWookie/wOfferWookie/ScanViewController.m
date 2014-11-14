@@ -17,6 +17,7 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) NSArray *avMetaDataObjects;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic) BOOL isDecodeDone;
 
 @end
 
@@ -30,6 +31,7 @@
         self.captureSession = nil;
         self.avMetaDataObjects = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code,
                                    AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
+        self.isDecodeDone = NO;
     }
     
     return self;
@@ -40,7 +42,7 @@
     [self loadBeepSound];
 }
 
--(void) viewDidAppear:(BOOL)animated
+-(void) viewWillAppear:(BOOL)animated
 {
     [self startScanning];
 }
@@ -101,12 +103,15 @@
 
 -(void) captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
-    if (metadataObjects != nil && [metadataObjects count] > 0) {
-        AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
-        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeUPCECode]) {
+    if (!self.isDecodeDone) {
+        self.isDecodeDone = YES;
+        if (metadataObjects != nil && [metadataObjects count] > 0) {
+            AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
+            
             if (_audioPlayer) {
                 [_audioPlayer play];
             }
+            
             [self.navigationController popViewControllerAnimated:NO];
             [self.scanViewDelegate barcodeActionReceived:[metadataObj stringValue]];
         }

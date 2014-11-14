@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardItem.h"
 
 @interface RetailerDetailViewController : UITabBarController
+
+@property (nonatomic) CardItem *cardItem;
 
 @end

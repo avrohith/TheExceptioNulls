@@ -14,8 +14,8 @@
 
 @interface RetailerListViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *cardPage;
 @property (nonatomic) NSString *cellReuseIdentifier;
+@property (nonatomic) NSString *opcoValue;
 
 @end
 
@@ -54,18 +54,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)cardPageButtonClick:(id)sender {
-    
-    ScanViewController *scanViewController = [[ScanViewController alloc] init];
-    scanViewController.scanViewDelegate = self;
-    [self.navigationController pushViewController:scanViewController animated:YES];
-}
-
 #pragma mark - table view methods
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [AppResources appResources].retailerNamesArray.count;
+    return [[AppResources appResources] getRetailerNamesArray].count;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,14 +66,15 @@
     ScanViewController *scanViewController = [[ScanViewController alloc] init];
     scanViewController.scanViewDelegate = self;
     [self.navigationController pushViewController:scanViewController animated:YES];
+    self.opcoValue = [[[AppResources appResources] getRetailerOpcosArray] objectAtIndex:indexPath.row];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RetailerListCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
     
-    cell.retailerName.text = [[[AppResources appResources] retailerNamesArray] objectAtIndex:indexPath.row];
-    cell.retailerImage.image = [UIImage imageNamed:[[[AppResources appResources] retailerImagesArray] objectAtIndex:indexPath.row]];
+    cell.retailerName.text = [[[AppResources appResources] getRetailerNamesArray] objectAtIndex:indexPath.row];
+    cell.retailerImage.image = [UIImage imageNamed:[[[AppResources appResources] getRetailerImagesArray] objectAtIndex:indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -90,6 +84,12 @@
 -(void) barcodeActionReceived:(NSString *)barcodeValue
 {
     NSLog(@"barcode value - %@", barcodeValue);
+    if (barcodeValue) {
+        [[AppResources appResources] addCardWithOpco:self.opcoValue AndCardValue:barcodeValue];
+    }else
+    {
+        [[AppResources appResources] addCardWithOpco:self.opcoValue AndCardValue:@""];
+    }
     [self.navigationController popViewControllerAnimated:NO];
     [self.retailerListDelegate retailerSelected];
 }

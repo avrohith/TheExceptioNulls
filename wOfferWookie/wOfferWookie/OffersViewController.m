@@ -62,7 +62,7 @@
 {
     OfferCollectionCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
     
-    collectionCell.offerImage.image = [UIImage imageNamed:[[[AppResources appResources] retailerImagesArray] objectAtIndex:indexPath.row]];
+    collectionCell.offerImage.image = [UIImage imageNamed:[[[AppResources appResources] getRetailerImagesArray] objectAtIndex:indexPath.row]];
     //collectionCell.retailerName.text = [[[AppResources appResources] retailerNamesArray] objectAtIndex:indexPath.row];
     
     return collectionCell;
@@ -70,7 +70,7 @@
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [AppResources appResources].retailerNamesArray.count;
+    return [[AppResources appResources] getRetailerNamesArray].count;
 }
 
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView

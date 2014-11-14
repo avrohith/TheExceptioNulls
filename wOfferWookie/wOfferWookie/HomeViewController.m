@@ -15,6 +15,7 @@
 @interface HomeViewController ()
 
 @property (nonatomic) NSString *cellReuseIdentifier;
+@property (nonatomic) NSArray *cardsArray;
 
 @end
 
@@ -55,12 +56,18 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.cardsArray = [[AppResources appResources] getCards];
+    [self.collectionView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction) addNewRetailer:(id)sender
+- (void) addNewRetailer:(id)sender
 {
     NSLog(@"add retailer selected");
     RetailerListViewController *retailerListViewController = [[RetailerListViewController alloc] init];
@@ -70,7 +77,6 @@
 
 -(void) retailerSelected
 {
-    // Reload data here
     RetailerDetailViewController *retailerDetailViewcontroller = [[RetailerDetailViewController alloc] init];
     [self.navigationController pushViewController:retailerDetailViewcontroller animated:YES];
 }
@@ -81,15 +87,17 @@
 {
     RetailerCollectionViewCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
     
-    collectionCell.retailerImage.image = [UIImage imageNamed:[[[AppResources appResources] retailerImagesArray] objectAtIndex:indexPath.row]];
-    collectionCell.retailerName.text = [[[AppResources appResources] retailerNamesArray] objectAtIndex:indexPath.row];
+    CardItem *cardItem = [self.cardsArray objectAtIndex:indexPath.row];
+    
+    collectionCell.retailerImage.image = [UIImage imageNamed:[[AppResources appResources] getRetailerImageNameForOpco:cardItem.opco]];
+    collectionCell.retailerName.text = [[AppResources appResources] getRetailerNameForOpco:cardItem.opco];
     
     return collectionCell;
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [AppResources appResources].retailerNamesArray.count;
+    return self.cardsArray.count;
 }
 
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -100,6 +108,8 @@
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RetailerDetailViewController *retailerDetailViewController = [[RetailerDetailViewController alloc] init];
+    CardItem *cardItem = [self.cardsArray objectAtIndex:indexPath.row];
+    retailerDetailViewController.cardItem = cardItem;
     [self.navigationController pushViewController:retailerDetailViewController animated:YES];
 }
 

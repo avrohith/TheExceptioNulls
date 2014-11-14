@@ -118,17 +118,17 @@
     return self;
 }
 
--(NSArray *) retailerImagesArray
+-(NSArray *) getRetailerImagesArray
 {
     return self.retailerImages;
 }
 
--(NSArray *) retailerNamesArray
+-(NSArray *) getRetailerNamesArray
 {
     return self.retailerNames;
 }
 
--(NSArray *) retailerOpcosArray
+-(NSArray *) getRetailerOpcosArray
 {
     return self.retailerOpco;
 }
@@ -142,7 +142,8 @@
 
 -(void) loadAllCards
 {
-    if (!self.cardsArray) {
+    if (!self.cardsArray)
+    {
         
         NSEntityDescription *e = [NSEntityDescription entityForName:@"CardItem" inManagedObjectContext:self.managedObjectContext];
 
@@ -159,6 +160,9 @@
             
             self.cardsArray = [[NSMutableArray alloc] initWithArray:result];
         }
+    }else
+    {
+        self.cardsArray = [[NSMutableArray alloc] init];
     }
 }
 
@@ -173,7 +177,7 @@
     return isSuccessful;
 }
 
--(NSArray *) getUserCards
+-(NSArray *) getCards
 {
     return self.cardsArray;
 }
@@ -191,5 +195,105 @@
     [self.managedObjectContext deleteObject:item];
     [self.cardsArray removeObjectIdenticalTo:item];
 }
+
+-(NSString *) getRetailerImageNameForOpco: (NSString *) opcoValue
+{
+    if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:0]]) {
+        return [self.retailerImages objectAtIndex:0];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:1]]){
+        return [self.retailerImages objectAtIndex:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:2]]){
+        return [self.retailerImages objectAtIndex:2];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:3]]){
+        return [self.retailerImages objectAtIndex:3];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:4]]){
+        return [self.retailerImages objectAtIndex:4];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:5]]){
+        return [self.retailerImages objectAtIndex:5];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:6]]){
+        return [self.retailerImages objectAtIndex:6];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:7]]){
+        return [self.retailerImages objectAtIndex:7];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:8]]){
+        return [self.retailerImages objectAtIndex:8];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:9]]){
+        return [self.retailerImages objectAtIndex:9];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:10]]){
+        return [self.retailerImages objectAtIndex:10];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:11]]){
+        return [self.retailerImages objectAtIndex:11];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:12]]){
+        return [self.retailerImages objectAtIndex:12];
+    }
+    
+    return nil;
+}
+
+-(NSString *) getRetailerNameForOpco:(NSString *)opcoValue
+{
+    if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:0]]) {
+        return [self.retailerNames objectAtIndex:0];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:1]]){
+        return [self.retailerNames objectAtIndex:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:2]]){
+        return [self.retailerNames objectAtIndex:2];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:3]]){
+        return [self.retailerNames objectAtIndex:3];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:4]]){
+        return [self.retailerNames objectAtIndex:4];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:5]]){
+        return [self.retailerNames objectAtIndex:5];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:6]]){
+        return [self.retailerNames objectAtIndex:6];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:7]]){
+        return [self.retailerNames objectAtIndex:7];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:8]]){
+        return [self.retailerNames objectAtIndex:8];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:9]]){
+        return [self.retailerNames objectAtIndex:9];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:10]]){
+        return [self.retailerNames objectAtIndex:10];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:11]]){
+        return [self.retailerNames objectAtIndex:11];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:12]]){
+        return [self.retailerNames objectAtIndex:12];
+    }
+    
+    return nil;
+}
+
+-(UIColor *) getColorFromOpco:(NSString *) opcoValue
+{
+    if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:0]]) {
+        return [UIColor colorWithRed:237.0/255.0 green:27.0/255.0 blue:36.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:1]]){
+        return [UIColor colorWithRed:52.0/255.0 green:182.0/255.0 blue:214.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:2]]){
+        return [UIColor colorWithRed:112.0/255.0 green:32.0/255.0 blue:118.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:3]]){
+        return [UIColor colorWithRed:238.0/255.0 green:58.0/255.0 blue:67.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:4]]){
+        return [UIColor colorWithRed:27.0/255.0 green:134.0/255.0 blue:68.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:5]]){
+        return [UIColor colorWithRed:0/255.0 green:102.0/255.0 blue:176.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:6]]){
+        return [UIColor colorWithRed:227.0/255.0 green:26.0/255.0 blue:48.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:7]]){
+        return [UIColor colorWithRed:178.0/255.0 green:50.0/255.0 blue:57.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:8]]){
+        return [UIColor colorWithRed:224.0/255.0 green:61.0/255.0 blue:63.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:9]]){
+        return [UIColor colorWithRed:237.0/255.0 green:24.0/255.0 blue:46.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:10]]){
+        return [UIColor colorWithRed:112.0/255.0 green:32.0/255.0 blue:118.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:11]]){
+        return [UIColor colorWithRed:0/255.0 green:126.0/255.0 blue:203.0/255.0 alpha:1];
+    }else if ([opcoValue isEqualToString:[self.retailerOpco objectAtIndex:12]]){
+        return [UIColor colorWithRed:255.0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
+    }
+    
+    return nil;
+}
+
 
 @end

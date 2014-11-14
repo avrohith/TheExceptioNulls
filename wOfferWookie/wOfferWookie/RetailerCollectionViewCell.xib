@@ -13,11 +13,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-LE-G6c">
-                        <rect key="frame" x="13" y="8" width="125" height="100"/>
+                        <rect key="frame" x="13" y="8" width="125" height="101.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retailer Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEU-UZ-yYp">
-                        <rect key="frame" x="21" y="121" width="109" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retailer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEU-UZ-yYp">
+                        <rect key="frame" x="10" y="122" width="130" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -28,11 +28,11 @@
             <constraints>
                 <constraint firstItem="qaS-LE-G6c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="13" id="6hS-9l-wfQ"/>
                 <constraint firstAttribute="trailing" secondItem="qaS-LE-G6c" secondAttribute="trailing" constant="12" id="OvG-qr-U4M"/>
+                <constraint firstItem="GEU-UZ-yYp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="PQZ-qj-D6q"/>
                 <constraint firstAttribute="bottom" secondItem="GEU-UZ-yYp" secondAttribute="bottom" constant="8" id="Xqv-pD-Dwb"/>
                 <constraint firstItem="qaS-LE-G6c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="frh-6Y-ciT"/>
-                <constraint firstAttribute="centerX" secondItem="qaS-LE-G6c" secondAttribute="centerX" id="gw2-dK-fR0"/>
                 <constraint firstItem="GEU-UZ-yYp" firstAttribute="top" secondItem="qaS-LE-G6c" secondAttribute="bottom" constant="13" id="nnS-a5-Bj5"/>
-                <constraint firstAttribute="centerX" secondItem="GEU-UZ-yYp" secondAttribute="centerX" id="w74-ED-o20"/>
+                <constraint firstAttribute="trailing" secondItem="GEU-UZ-yYp" secondAttribute="trailing" constant="10" id="u8v-xs-AF1"/>
             </constraints>
             <connections>
                 <outlet property="retailerImage" destination="qaS-LE-G6c" id="0SG-gf-qBh"/>
