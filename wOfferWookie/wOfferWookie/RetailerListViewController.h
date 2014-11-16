@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ScanViewController.h"
+#import "CardItem.h"
 
 @protocol RetailerListDelegate <NSObject>
 
 @required
--(void) retailerSelected;
+-(void) retailerSelectedWithCardItem:(CardItem *) cardItem;
 
 @end
 

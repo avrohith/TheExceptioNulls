@@ -14,6 +14,7 @@
 		AE3142461A132AD000AE3512 /* CardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3142451A132AD000AE3512 /* CardItem.m */; };
 		AE3142BA1A1464F500AE3512 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3142B81A1464F500AE3512 /* ScanViewController.m */; };
 		AE3142BB1A1464F500AE3512 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3142B91A1464F500AE3512 /* ScanViewController.xib */; };
+		AE3466BA1A195269007F322E /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE3466B91A195269007F322E /* beep.wav */; };
 		AE91E2061A0ED71000DFD02C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E2051A0ED71000DFD02C /* main.m */; };
 		AE91E2091A0ED71000DFD02C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91E2081A0ED71000DFD02C /* AppDelegate.m */; };
 		AE91E2111A0ED71000DFD02C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE91E2101A0ED71000DFD02C /* Images.xcassets */; };
@@ -32,7 +33,6 @@
 		AEE3FC561A1045F000A6C2A4 /* RetailerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE3FC541A1045F000A6C2A4 /* RetailerCollectionViewCell.m */; };
 		AEE3FC571A1045F000A6C2A4 /* RetailerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEE3FC551A1045F000A6C2A4 /* RetailerCollectionViewCell.xib */; };
 		AEE3FC591A10747000A6C2A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE3FC581A10747000A6C2A4 /* AVFoundation.framework */; };
-		AEE3FC5D1A1082DB00A6C2A4 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AEE3FC5C1A1082DB00A6C2A4 /* beep.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +57,7 @@
 		AE3142B71A1464F500AE3512 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		AE3142B81A1464F500AE3512 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		AE3142B91A1464F500AE3512 /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
+		AE3466B91A195269007F322E /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		AE91E2001A0ED71000DFD02C /* wOfferWookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wOfferWookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE91E2041A0ED71000DFD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE91E2051A0ED71000DFD02C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		AEE3FC541A1045F000A6C2A4 /* RetailerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetailerCollectionViewCell.m; sourceTree = "<group>"; };
 		AEE3FC551A1045F000A6C2A4 /* RetailerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetailerCollectionViewCell.xib; sourceTree = "<group>"; };
 		AEE3FC581A10747000A6C2A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		AEE3FC5C1A1082DB00A6C2A4 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE3466BB1A19527A007F322E /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AE3466B91A195269007F322E /* beep.wav */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
 		AE91E1F71A0ED71000DFD02C = {
 			isa = PBXGroup;
 			children = (
@@ -133,10 +141,8 @@
 		AE91E2021A0ED71000DFD02C /* wOfferWookie */ = {
 			isa = PBXGroup;
 			children = (
+				AE3466BB1A19527A007F322E /* sounds */,
 				AE31423E1A13269B00AE3512 /* UserData.xcdatamodeld */,
-				AE3142441A132AD000AE3512 /* CardItem.h */,
-				AE3142451A132AD000AE3512 /* CardItem.m */,
-				AEE3FC5C1A1082DB00A6C2A4 /* beep.mp3 */,
 				AE91E2551A0FCB4D00DFD02C /* Models */,
 				AE91E2381A0EDF5B00DFD02C /* ViewControllers */,
 				AE91E2071A0ED71000DFD02C /* AppDelegate.h */,
@@ -200,6 +206,8 @@
 		AE91E2551A0FCB4D00DFD02C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AE3142441A132AD000AE3512 /* CardItem.h */,
+				AE3142451A132AD000AE3512 /* CardItem.m */,
 				AE91E2561A0FCB9500DFD02C /* RetailerListItem.h */,
 				AE91E2571A0FCB9500DFD02C /* RetailerListItem.m */,
 				AE91E25A1A0FE43600DFD02C /* RetailerListCell.h */,
@@ -298,10 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3466BA1A195269007F322E /* beep.wav in Resources */,
 				AE3142BB1A1464F500AE3512 /* ScanViewController.xib in Resources */,
 				AEE3FC571A1045F000A6C2A4 /* RetailerCollectionViewCell.xib in Resources */,
 				AE91E25E1A0FE4B000DFD02C /* RetailerListCell.xib in Resources */,
-				AEE3FC5D1A1082DB00A6C2A4 /* beep.mp3 in Resources */,
 				AE91E2141A0ED71000DFD02C /* LaunchScreen.xib in Resources */,
 				AE91E2111A0ED71000DFD02C /* Images.xcassets in Resources */,
 				AE91E2541A0FC66600DFD02C /* CardViewController.xib in Resources */,

@@ -79,9 +79,9 @@
     [self.navigationController pushViewController:retailerListViewController animated:YES];
 }
 
--(void) retailerSelected
+-(void) retailerSelectedWithCardItem:(CardItem *)cardItem
 {
-    RetailerDetailViewController *retailerDetailViewcontroller = [[RetailerDetailViewController alloc] init];
+    RetailerDetailViewController *retailerDetailViewcontroller = [[RetailerDetailViewController alloc] initWithCardItem:cardItem];
     [self.navigationController pushViewController:retailerDetailViewcontroller animated:YES];
 }
 

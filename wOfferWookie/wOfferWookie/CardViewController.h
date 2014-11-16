@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CardItem.h"
 
-@interface CardViewController : UIViewController
+@interface CardViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic) CardItem *cardItem;
 

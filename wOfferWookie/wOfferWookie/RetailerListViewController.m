@@ -91,7 +91,7 @@
         [[AppResources appResources] addCardWithOpco:self.opcoValue AndCardValue:@""];
     }
     [self.navigationController popViewControllerAnimated:NO];
-    [self.retailerListDelegate retailerSelected];
+    [self.retailerListDelegate retailerSelectedWithCardItem:[[[AppResources appResources] getCards] lastObject]];
 }
 
 /*

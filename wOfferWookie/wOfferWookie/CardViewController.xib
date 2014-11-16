@@ -10,6 +10,7 @@
                 <outlet property="retailerHeaderUIView" destination="0My-8O-yja" id="ADk-no-Ftb"/>
                 <outlet property="userCardBardcodeImage" destination="xba-vO-DWc" id="JUh-14-9Aj"/>
                 <outlet property="userCardValue" destination="UUc-NC-Xuy" id="O3F-jx-ybM"/>
+                <outlet property="userImageButton" destination="ae2-xv-gFb" id="fYj-04-ROA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -82,7 +83,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="250" id="l0e-33-Kzq"/>
                                             </constraints>
-                                            <state key="normal" image="i_camera">
+                                            <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -135,7 +136,4 @@
             <point key="canvasLocation" x="453" y="270"/>
         </view>
     </objects>
-    <resources>
-        <image name="i_camera" width="97" height="97"/>
-    </resources>
 </document>

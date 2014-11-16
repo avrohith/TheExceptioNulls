@@ -108,19 +108,22 @@
         if (metadataObjects != nil && [metadataObjects count] > 0) {
             AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
             
-            if (_audioPlayer) {
-                [_audioPlayer play];
-            }
-            
-            [self.navigationController popViewControllerAnimated:NO];
-            [self.scanViewDelegate barcodeActionReceived:[metadataObj stringValue]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (_audioPlayer) {
+                    [_audioPlayer play];
+                }
+                
+                [self.navigationController popViewControllerAnimated:NO];
+                [self.scanViewDelegate barcodeActionReceived:[metadataObj stringValue]];
+            });
         }
     }
 }
 
 -(void)loadBeepSound{
     // Get the path to the beep.mp3 file and convert it to a NSURL object.
-    NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
+    NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"wav"];
     NSURL *beepURL = [NSURL URLWithString:beepFilePath];
     
     NSError *error;
